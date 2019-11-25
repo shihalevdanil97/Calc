@@ -9,4 +9,4 @@ if c == "*" :
     print(int(a) * int(b))
 if c == "/" :
     print (int(a) / int(b))
-print('ff')
+
