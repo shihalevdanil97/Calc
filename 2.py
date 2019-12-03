@@ -1,16 +1,20 @@
-numbers = []
 import random
-number = random.randint(1,1000)
+
+number = random.randint(1, 1000)
 print(number)
-while True :
-   a = input('Выбирете число от одного 1 до 1000 :')
-   if a.isdigit():
-       numbers.append(int(a))
-   if int(a) == number :
-       print("Вы угадали")
-       break
-   elif int(a) < number:
-       print('Введенное число больше')
-   elif int(a) > number :
-       print ('Введенное число меньше')
-print("Количество попыток ", len(numbers))
+i = 0
+while True:
+    guess = input('Выбирете число от одного 1 до 1000 :')
+    if guess.isdigit():
+        guess_as_number = int(guess)
+        if guess_as_number == number:
+            print("Вы угадали")
+            break
+        elif guess_as_number < number:
+            print('Введенное число больше')
+        elif guess_as_number > number:
+            print('Введенное число меньше')
+    else:
+        print('Выбирете число от 1 до 1000')
+    i = i + 1
+print('Количество попыток', i)
