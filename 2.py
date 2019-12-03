@@ -2,9 +2,16 @@ import random
 
 number = random.randint(1, 1000)
 print(number)
-i = 0
+
+counter = 0
 while True:
     guess = input('Выбирете число от одного 1 до 1000 :')
+    if int(guess) > 1000:
+        print("Меньше сука 1000")
+        continue
+    if int(guess) < 0:
+        print("Больше сука 0")
+        continue
     if guess.isdigit():
         guess_as_number = int(guess)
         if guess_as_number == number:
@@ -16,5 +23,6 @@ while True:
             print('Введенное число меньше')
     else:
         print('Выбирете число от 1 до 1000')
-    i = i + 1
-print('Количество попыток', i)
+
+    counter = counter + 1
+print('Количество попыток', counter)
